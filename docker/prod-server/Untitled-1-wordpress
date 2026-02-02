@@ -1,0 +1,35 @@
+/* =====================================
+   Search & Filter – CSS-only submit control
+   ===================================== */
+
+/* Default: disable submit */
+.searchandfilter input[type="submit"] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+/* Enable submit IF subject is changed */
+.searchandfilter:has(select#ofsubject option:not([value="0"]):checked)
+input[type="submit"] {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Enable submit IF class is changed */
+.searchandfilter:has(select#ofclass option:not([value="0"]):checked)
+input[type="submit"] {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
