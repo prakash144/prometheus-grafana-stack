@@ -4,6 +4,8 @@
 
 🎥 **Video Tutorial:** [Watch on YouTube](https://youtu.be/ddZjhv66o_o)
 
+![1770066578720](image/Youtube-Lecture/1770066578720.png)
+
 ---
 
 ## 📋 Prerequisites
