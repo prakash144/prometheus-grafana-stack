@@ -1,32 +1,28 @@
+// ===== IMPORTS =====
+const apminsight = require("apminsight");
 const express = require("express");
-const client = require("prom-client"); 
+const client = require("prom-client");
 const { createLogger, transports, format } = require("winston");
 const LokiTransport = require("winston-loki");
 const responseTime = require("response-time");
+// const { v4: uuidv4 } = require("uuid");
 const { doSomeHeavyTask } = require("./util");
-
-const options = {
-  format: format.combine(
-    format.timestamp(),
-    format.json()
-  ),
-  transports: [
-    new LokiTransport({
-      labels: { app: "express-server" },
-      host: "http://loki:3100"
-    })
-  ]
-};
-
-const logger = createLogger(options);
 
 const app = express();
 const PORT = process.env.PORT || 8000;
 
-// =============================
-// PROCESS LEVEL ERROR HANDLING
-// =============================
+// ===== LOGGER =====
+const logger = createLogger({
+  format: format.combine(format.timestamp(), format.json()),
+  transports: [
+    new LokiTransport({
+      labels: { app: "express-server" },
+      host: "http://loki:3100",
+    }),
+  ],
+});
 
+// ===== PROCESS-LEVEL ERROR HANDLING =====
 process.on("uncaughtException", (error) => {
   logger.error("UNCAUGHT EXCEPTION - Application Crashed", {
     error: error.message,
@@ -36,18 +32,12 @@ process.on("uncaughtException", (error) => {
 });
 
 process.on("unhandledRejection", (reason) => {
-  logger.error("UNHANDLED PROMISE REJECTION", {
-    reason: reason,
-  });
+  logger.error("UNHANDLED PROMISE REJECTION", { reason });
 });
 
-// =============================
-// PROMETHEUS SETUP
-// =============================
-
+// ===== PROMETHEUS SETUP =====
 try {
-  const collectDefaultMetrics = client.collectDefaultMetrics;
-  collectDefaultMetrics({ register: client.register });
+  client.collectDefaultMetrics({ register: client.register });
 } catch (error) {
   logger.error("Failed to initialize Prometheus default metrics", {
     error: error.message,
@@ -64,18 +54,31 @@ const reqResTime = new client.Histogram({
 const reqCounter = new client.Counter({
   name: "http_requests_total",
   help: "Total number of HTTP requests",
+  labelNames: ["method", "route", "status_code"],
 });
 
-// =============================
-// MIDDLEWARES
-// =============================
+// ===== UTIL: ASYNC HANDLER WRAPPER =====
+const asyncHandler = (fn) => (req, res, next) =>
+  Promise.resolve(fn(req, res, next)).catch(next);
 
-// Response time + metrics with error safety
+// ===== MIDDLEWARES =====
+
+// Request ID
+// app.use((req, res, next) => {
+//   req.id = uuidv4();
+//   res.set("X-Request-ID", req.id);
+//   next();
+// });
+
+// Response time + metrics
 app.use(
   responseTime((req, res, time) => {
     try {
-      reqCounter.inc();
-      const route = req.route?.path || req.originalUrl;
+      const route = req.route?.path || req.path || "unknown";
+
+      reqCounter
+        .labels(req.method, route, String(res.statusCode))
+        .inc();
 
       reqResTime
         .labels(req.method, route, String(res.statusCode))
@@ -85,18 +88,21 @@ app.use(
         error: error.message,
         method: req.method,
         url: req.originalUrl,
+        requestId: req.id,
       });
     }
   })
 );
 
-// Request logger with error safety
+// Safer request logging (no sensitive headers)
 app.use((req, res, next) => {
   try {
     logger.info("Incoming request", {
+      requestId: req.id,
       method: req.method,
       url: req.originalUrl,
-      headers: req.headers,
+      userAgent: req.headers["user-agent"],
+      contentType: req.headers["content-type"],
     });
   } catch (error) {
     console.error("CRITICAL: Logger failed!", error);
@@ -104,104 +110,73 @@ app.use((req, res, next) => {
   next();
 });
 
-// =============================
-// ROUTES
-// =============================
-
+// ===== ROUTES =====
 app.get("/", (req, res) => {
-  try {
-    res.json({
-      message: "Hello from Express Server",
-    });
-  } catch (error) {
-    logger.error("Error in / route", {
-      error: error.message,
-    });
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+  res.json({ message: "Hello from Express Server" });
 });
 
-app.get("/slow", async (req, res) => {
-  const requestStart = Date.now();
-
-  try {
+app.get(
+  "/slow",
+  asyncHandler(async (req, res) => {
     const timeTaken = await doSomeHeavyTask();
-    const totalTime = Date.now() - requestStart;
 
     logger.info("/slow success", {
-      responseTimeMs: totalTime,
+      requestId: req.id,
+      timeTakenMs: timeTaken,
     });
 
     res.json({
       status: "success",
       message: `Heavy task completed in ${timeTaken}ms`,
     });
-  } catch (error) {
-    const totalTime = Date.now() - requestStart;
+  })
+);
 
-    logger.error("/slow failed", {
-      responseTimeMs: totalTime,
-      error: error.message,
-      stack: error.stack,
-    });
-
-    res.status(500).json({
-      status: "error",
-      message: error.message,
-    });
-  }
+// Health check (useful for k8s / load balancers)
+app.get("/health", (req, res) => {
+  res.json({ status: "ok" });
 });
 
-app.get("/metrics", async (req, res) => {
-  try {
-    res.set("Content-Type", client.register.contentType);
-    res.end(await client.register.metrics());
-  } catch (err) {
-    logger.error("Failed to serve metrics", {
-      error: err.message,
-      stack: err.stack,
-    });
-    res.status(500).end("Metrics unavailable");
-  }
+// (Optional) protect metrics in prod
+app.use("/metrics", (req, res, next) => {
+  // Example: restrict to internal network
+  // if (!req.ip.startsWith("10.")) return res.status(403).send("Forbidden");
+  next();
 });
 
-// =============================
-// 404 HANDLER (MISSING ROUTE)
-// =============================
+app.get("/metrics", asyncHandler(async (req, res) => {
+  res.set("Content-Type", client.register.contentType);
+  res.end(await client.register.metrics());
+}));
+
+// ===== 404 HANDLER =====
 app.use((req, res) => {
   logger.warn("Route not found (404)", {
+    requestId: req.id,
     method: req.method,
     url: req.originalUrl,
   });
   res.status(404).json({ error: "Not Found" });
 });
 
-// =============================
-// CENTRALIZED ERROR HANDLER
-// =============================
+// ===== CENTRALIZED ERROR HANDLER =====
 app.use((err, req, res, next) => {
   logger.error("Global Express error handler", {
+    requestId: req.id,
     error: err.message,
     stack: err.stack,
     method: req.method,
     url: req.originalUrl,
   });
 
-  res.status(500).json({
-    error: "Internal Server Error",
-  });
+  res.status(500).json({ error: "Internal Server Error" });
 });
 
-// =============================
-// SERVER STARTUP
-// =============================
-
+// ===== SERVER START =====
 const server = app.listen(PORT, "0.0.0.0", () => {
   logger.info("Express Server started", { port: PORT });
 });
 
 server.on("error", (error) => {
-  logger.error("Server startup error", {
-    error: error.message,
-  });
+  logger.error("Server startup error", { error: error.message });
 });

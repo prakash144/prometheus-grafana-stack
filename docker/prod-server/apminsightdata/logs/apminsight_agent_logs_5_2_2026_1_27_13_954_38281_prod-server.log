@@ -1,0 +1,225 @@
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "events"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::prototype.addListener 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "http"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::createServer 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Server 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::request 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::get 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "https"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::createServer 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Server 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::request 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::get 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "http2"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::createSecureServer 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Http2ServerRequest.prototype.setTimeout 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Http2ServerResponse.prototype.end 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Http2ServerResponse.prototype.setTimeout 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Http2ServerResponse.prototype.createPushResponse 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "net"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Server.prototype.getConnections 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Server.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.setTimeout 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.write 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.connect 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::createConnection 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Server.prototype.listen 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "fs"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::access 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::ftruncate 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::mkdir 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::mkdtemp 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::readdir 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::readFile 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::readlink 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::realpath 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::truncate 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::appendFile 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::symlink 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::copyFile 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::open 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::writeFile 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::chmod 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::fchmod 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::lchmod 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::link 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::rename 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::chown 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::fchown 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::lchown 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::futimes 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::utimes 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::exists 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::fdatasync 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::fstat 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::fsync 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::lstat 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::stat 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::rmdir 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::unlink 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::read 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::write 
+[5/2/2026 1:27:13] [INFO] realpath.native is undefined in module::fs 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "dns"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::lookupService 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::lookup 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolve 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolve4 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolve6 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveCname 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveMx 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveNaptr 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveNs 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolvePtr 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveSoa 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveSrv 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveTxt 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::resolveAny 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::reverse 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "crypto"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::pbkdf2 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::randomBytes 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::randomFill 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::generateKeyPair 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::scrypt 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "domain"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Domain.prototype.bind 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Domain.prototype.intercept 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "zlib"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Deflate.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Inflate.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Gzip.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Gunzip.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::DeflateRaw.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::InflateRaw.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Unzip.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Deflate.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Inflate.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Gzip.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Gunzip.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::DeflateRaw.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::InflateRaw.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Unzip.prototype.flush 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Deflate.prototype.params 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::deflate 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::deflateRaw 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::gunzip 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::gzip 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::inflate 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::inflateRaw 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::unzip 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "child_process"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::exec 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::execFile 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "cluster"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::disconnect 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Worker.prototype.send 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "process"
+[5/2/2026 1:27:13] [INFO] send is undefined in module::process 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::nextTick 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "dgram"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.bind 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.close 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Socket.prototype.send 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::createSocket 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "tls"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::connect 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::TLSSocket.prototype.renegotiate 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "stream"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Writable.prototype.write 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Writable.prototype.end 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::finished 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::pipeline 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "global"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::setImmediate 
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::setTimeout 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "inspector"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Session.prototype.post 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "worker_threads"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Worker.prototype.terminate 
+[5/2/2026 1:27:13] [INFO] Instrumenting module:: "readline"
+[5/2/2026 1:27:13] [INFO] Instrumenting function ::Interface.prototype.question 
+[5/2/2026 1:27:13] [INFO] Dependencies : {"apminsight":"^5.3.0","express":"^5.2.1","prom-client":"^15.1.3","response-time":"^2.3.4","winston":"^3.19.0","winston-loki":"^6.1.3"} 
+[5/2/2026 1:27:13] [INFO] Application not hosted in Kubernetes. 
+[5/2/2026 1:27:14] [INFO] Instrumenting module::express 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.render 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.json 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.jsonp 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.redirect 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.render 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.send 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::response.sendFile 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.checkout 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.copy 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.delete 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.get 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.head 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.lock 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.merge 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.mkactivity 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.mkcol 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.move 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.m-search 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.notify 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.options 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.patch 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.post 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.purge 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.put 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.report 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.search 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.subscribe 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.trace 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.unlock 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.unsubscribe 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.use 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.all 
+[5/2/2026 1:27:14] [INFO] Instrumenting function ::application.param 
+[5/2/2026 1:27:14] [INFO] Router.checkout is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.copy is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.delete is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.get is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.head is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.lock is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.merge is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.mkactivity is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.mkcol is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.move is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.m-search is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.notify is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.options is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.patch is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.post is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.purge is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.put is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.report is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.search is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.subscribe is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.trace is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.unlock is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.unsubscribe is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.use is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.all is undefined in module::express 
+[5/2/2026 1:27:14] [INFO] Router.param is undefined in module::express 
+[5/2/2026 1:27:14] [ERROR] HTTP request error: socket hang up 
+[5/2/2026 1:27:15] [ERROR] HTTP request error: socket hang up 
+[5/2/2026 1:27:15] [INFO] Application not hosted in AWS. 
+[5/2/2026 1:27:15] [ERROR] HTTP request error: socket hang up 
+[5/2/2026 1:27:15] [INFO] Application not hosted in Azure 
+[5/2/2026 1:27:15] [ERROR] HTTP request error: getaddrinfo ENOTFOUND metadata.google.internal 
+[5/2/2026 1:27:15] [INFO] Application not hosted in GCP 
+[5/2/2026 1:27:16] [ERROR] HTTP request error: socket hang up 
+[5/2/2026 1:27:16] [INFO] Application not hosted in docker. 
+[5/2/2026 1:27:16] [INFO] Application not hosted in AWS_Fargate 
+[5/2/2026 1:27:16] [INFO] intiating /arh/connect request to plusinsight.site24x7.in:443 
+[5/2/2026 1:27:36] [CRITICAL] txn dropped due to sampling factor 
+[5/2/2026 1:27:37] [CRITICAL] txn dropped due to sampling factor 
+[5/2/2026 1:27:41] [INFO] Response data for /arh/connect {"result":true,"data":{"instance-info":{"instanceid":"ad187e50728e5ab45f43e46bcef4ac1b"},"agent_specific_info":{"transaction.grouping":"","transaction.skip.patterns":"","webtransaction.trace.external.components.count.threshold":30,"bgtransaction.trace.threshold":5,"webtransaction.trace.request.headers.record":false,"normalize.dboperation":true,"bgtransaction.tracking.enabled":false,"transaction.grouping.by.position":"","transaction.keyword.skip.grouping":"","tags":"","webtransaction.trace.input.params.record":false,"bgtransaction.trace.enabled":false,"webtransaction.tracker.drop.threshold":10,"apminsight.log.level":"CRITICAL","exceptions.ignore":"","transaction.key.transactions":"","webtransaction.trace.request.headers.ignore":"X-Site24x7-Id, X-SITE24X7-RUM-APPKEY, X-SITE24X7-RUM-TRACEID, Site24x7SyntheticKey","transaction.skip.listening":"*.css, *.js, *.gif, *.jpg, *.jpeg, *.bmp, *.png, *.ico","application.group.name":"","http.errors.ignore":"","http.errors.track":"","transaction.prefix.grouping":""},"s247_cluster_name":5,"custom_config_info":{"transaction.trace.sql.parametrize":true,"down.alert.enabled":false,"suppress.instance.alerts":false,"cloud.instance.cleanup.threshold":7,"transaction.tracestore.size":30,"last.modified.time":1770235037197,"transaction.trace.threshold":2,"show.instance.port.number":true,"metricstore.bgmetric.bucket.size":100,"transaction.trace.enabled":true,"autoupgrade.enabled":false,"transaction.trace.sql.stacktrace.threshold":3,"transaction.tracking.request.interval":1,"metricstore.dbmetric.bucket.size":500,"metricstore.metric.bucket.size":250,"sql.capture.enabled":true,"apdex.threshold":0.5},"collector-info":{"port":"443","host":"plusinsight.site24x7.in"},"app_id":"3smf971237","config_info":{"transaction.trace.sql.parametrize":true,"down.alert.enabled":false,"suppress.instance.alerts":false,"transaction.grouping":"","cloud.instance.cleanup.threshold":7,"bgtransaction.trace.threshold":5,"bgtransaction.tracking.enabled":false,"transaction.keyword.skip.grouping":"","bgtransaction.trace.enabled":false,"autoupgrade.enabled":false,"exceptions.ignore":"","transaction.key.transactions":"","transaction.trace.sql.stacktrace.threshold":3,"application.group.name":"","http.errors.track":"","transaction.skip.patterns":"","last.modified.time":1770235037197,"transaction.trace.threshold":2,"webtransaction.trace.external.components.count.threshold":30,"webtransaction.trace.request.headers.record":false,"show.instance.port.number":true,"normalize.dboperation":true,"transaction.grouping.by.position":"","tags":"","transaction.trace.enabled":true,"webtransaction.trace.input.params.record":false,"webtransaction.tracker.drop.threshold":10,"apminsight.log.level":"CRITICAL","transaction.tracking.request.interval":1,"webtransaction.trace.request.headers.ignore":"X-Site24x7-Id, X-SITE24X7-RUM-APPKEY, X-SITE24X7-RUM-TRACEID, Site24x7SyntheticKey","transaction.skip.listening":"*.css, *.js, *.gif, *.jpg, *.jpeg, *.bmp, *.png, *.ico","http.errors.ignore":"","sql.capture.enabled":true,"apdex.threshold":0.5,"transaction.prefix.grouping":""}}}
+[5/2/2026 1:28:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:29:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:30:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:31:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:32:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:33:17] [CRITICAL] received empty response data for /arh/nvm request 
+[5/2/2026 1:34:17] [CRITICAL] received empty response data for /arh/nvm request 

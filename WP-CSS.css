@@ -1,0 +1,1731 @@
+/* =====================================================
+   CURIOSITY CLASSROOM - PREMIUM DESIGN SYSTEM
+   Balanced Typography & Consistent Spacing
+   Version 3.0 - Production Ready
+   ===================================================== */
+
+/* =====================================================
+   DESIGN TOKENS - FOUNDATION
+   ===================================================== */
+:root {
+  /* Colors */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #dbeafe;
+  --primary-lighter: #eff6ff;
+  --accent-color: #f59e0b;
+  --accent-hover: #d97706;
+  --accent-light: #fef3c7;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --card-bg: #ffffff;
+  --bg-page: #f8fafc;
+  --bg-subtle: #f1f5f9;
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+  
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  
+  /* Typography Scale (balanced & harmonious) */
+  --font-xs: 12px;
+  --font-sm: 13px;
+  --font-base: 15px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+  --font-3xl: 28px;
+  --font-4xl: 32px;
+  
+  /* Spacing Scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  
+  /* Container */
+  --container-padding: 32px;
+  --container-max: 1280px;
+}
+
+/* =====================================================
+   GLOBAL RESET
+   ===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: var(--bg-page);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--font-base);
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Remove spacing from structural elements */
+.site-header,
+.ast-header-break-point,
+.ast-desktop-header,
+.main-header-bar,
+.ast-main-header-bar-alignment,
+.main-header-bar-wrap,
+.ast-mobile-header-wrap,
+.site-content,
+#content,
+#primary,
+.content-area,
+.site-main,
+#main,
+.wp-block-cover,
+.hero-section,
+.slider-container,
+.elementor-section:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* =====================================================
+   NAVIGATION - CLEAN & PROFESSIONAL
+   ===================================================== */
+.site-header {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px);
+}
+
+.main-header-bar {
+  padding: var(--space-4) 0 !important;
+}
+
+.site-branding .site-title {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.site-navigation a,
+.main-navigation a {
+  font-size: var(--font-base);
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+  padding: var(--space-2) var(--space-3);
+  display: inline-block;
+}
+
+.site-navigation a:hover,
+.main-navigation a:hover,
+.site-navigation .current-menu-item > a,
+.main-navigation .current-menu-item > a {
+  color: var(--primary-color);
+}
+
+/* =====================================================
+   CONTAINER SYSTEM
+   ===================================================== */
+.ast-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+}
+
+.site-content > .ast-container {
+  padding-top: var(--space-10) !important;
+  padding-bottom: var(--space-12) !important;
+}
+
+.ast-archive-description,
+.ast-archive-header {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+}
+
+.ast-separate-container .site-main > .ast-article-single,
+.ast-separate-container .site-main > .ast-article-post {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* =====================================================
+   BREADCRUMBS - MINIMAL & ELEGANT
+   ===================================================== */
+.breadcrumb,
+.breadcrumbs,
+.ast-breadcrumbs-wrapper,
+.rank-math-breadcrumb,
+.yoast-breadcrumb,
+.elementor-widget-breadcrumbs,
+nav[aria-label="breadcrumb"],
+nav[aria-label="Breadcrumb"] {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--space-6) !important;
+  padding: var(--space-3) var(--space-5) !important;
+  background: white !important;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  box-shadow: var(--shadow-xs);
+}
+
+.breadcrumb a,
+.breadcrumbs a,
+.ast-breadcrumbs-wrapper a,
+.rank-math-breadcrumb a,
+.yoast-breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.breadcrumb a:hover,
+.breadcrumbs a:hover,
+.ast-breadcrumbs-wrapper a:hover,
+.rank-math-breadcrumb a:hover,
+.yoast-breadcrumb a:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumb-separator,
+.separator,
+.breadcrumb-delimiter {
+  margin: 0 var(--space-1);
+  color: var(--text-light);
+  opacity: 0.5;
+}
+
+.breadcrumb .current,
+.breadcrumbs .current,
+.breadcrumb-active {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* =====================================================
+   PAGE TITLES - BALANCED TYPOGRAPHY
+   ===================================================== */
+/* Hide default WordPress titles */
+.ast-archive-header .entry-title,
+.entry-header .entry-title,
+.page-title,
+.archive-title {
+  display: none !important;
+}
+
+/* Elementor page titles - properly sized */
+.elementor-widget-heading .elementor-heading-title,
+.elementor-heading-title,
+.page-title-elementor,
+.custom-page-title {
+  font-size: var(--font-4xl) !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  line-height: 1.2 !important;
+  margin: 0 0 var(--space-5) 0 !important;
+  padding-bottom: var(--space-4) !important;
+  position: relative;
+  display: inline-block;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle decorative underline */
+.elementor-widget-heading .elementor-heading-title::after,
+.elementor-heading-title.has-underline::after,
+.page-title-with-accent::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--radius-xs);
+}
+
+.elementor-section.page-title-section,
+.elementor-section.archive-title-section,
+.title-wrapper {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: var(--space-8) !important;
+}
+
+.elementor-widget-text-editor.page-subtitle,
+.archive-description,
+.page-description {
+  font-size: var(--font-md);
+  color: var(--text-secondary);
+  margin-top: var(--space-3);
+  line-height: 1.6;
+}
+
+/* =====================================================
+   SEARCH & FILTER - COMPACT & MODERN
+   ===================================================== */
+.searchandfilter {
+  background: white !important;
+  padding: var(--space-6) var(--space-8) !important;
+  margin: 0 0 var(--space-10) 0 !important;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative;
+}
+
+/* Top accent line */
+.searchandfilter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.searchandfilter ul {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr auto !important;
+  gap: var(--space-4) !important;
+  align-items: end;
+}
+
+.searchandfilter ul li {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchandfilter label {
+  font-size: var(--font-xs) !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin-bottom: var(--space-2) !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase;
+}
+
+.searchandfilter select {
+  width: 100% !important;
+  height: 44px !important;
+  padding: 0 var(--space-4) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-color) !important;
+  background-color: white !important;
+  font-size: var(--font-base) !important;
+  color: var(--text-primary) !important;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23475569' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  padding-right: var(--space-8) !important;
+}
+
+.searchandfilter select:hover {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px var(--primary-lighter) !important;
+}
+
+.searchandfilter select:focus {
+  outline: none !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 3px var(--primary-light) !important;
+}
+
+.searchandfilter input[type="submit"] {
+  height: 44px !important;
+  padding: 0 var(--space-6) !important;
+  border-radius: var(--radius-md) !important;
+  border: none !important;
+  background: var(--primary-color) !important;
+  color: white !important;
+  font-size: var(--font-sm) !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.searchandfilter input[type="submit"]:hover {
+  background: var(--primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.searchandfilter input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* =====================================================
+   NOTE CARDS - CLEAN & BALANCED
+   ===================================================== */
+.search-filter-results,
+.notes-grid,
+.archive-posts,
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin: 0 0 var(--space-12) 0;
+  padding: 0 !important;
+}
+
+.search-filter-results article,
+.notes-grid article,
+.archive-posts article,
+.post-grid article {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-xs);
+  cursor: pointer;
+}
+
+.search-filter-results article:hover,
+.notes-grid article:hover,
+.archive-posts article:hover,
+.post-grid article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+/* Card image */
+.search-filter-results .post-thumbnail,
+.notes-grid .post-thumbnail,
+.archive-posts .post-thumbnail,
+.post-grid .post-thumbnail {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  height: 180px;
+}
+
+.search-filter-results img,
+.notes-grid img,
+.archive-posts img,
+.post-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.search-filter-results article:hover img,
+.notes-grid article:hover img,
+.archive-posts article:hover img,
+.post-grid article:hover img {
+  transform: scale(1.05);
+}
+
+/* Card content */
+.search-filter-results .entry-content,
+.search-filter-results .entry-summary,
+.search-filter-results > div:not(.post-thumbnail),
+.notes-grid .entry-content,
+.archive-posts .entry-content,
+.post-grid .entry-content {
+  padding: var(--space-5) !important;
+}
+
+/* Card title - balanced size */
+.search-filter-results h2,
+.search-filter-results h3,
+.search-filter-results .entry-title,
+.notes-grid h2,
+.notes-grid .entry-title,
+.archive-posts h2,
+.post-grid h2 {
+  font-size: var(--font-md) !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 var(--space-2) 0 !important;
+  color: var(--text-primary) !important;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.search-filter-results a,
+.notes-grid a,
+.archive-posts a,
+.post-grid a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.search-filter-results article:hover h2,
+.search-filter-results article:hover h3,
+.search-filter-results article:hover .entry-title,
+.notes-grid article:hover h2,
+.archive-posts article:hover h2,
+.post-grid article:hover h2 {
+  color: var(--primary-color) !important;
+}
+
+/* Card excerpt */
+.search-filter-results .entry-summary,
+.search-filter-results .entry-excerpt,
+.notes-grid .entry-summary,
+.archive-posts .entry-summary {
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Card meta */
+.search-filter-results .entry-meta,
+.search-filter-results .posted-on,
+.search-filter-results .byline,
+.notes-grid .entry-meta,
+.archive-posts .entry-meta,
+.post-grid .entry-meta {
+  font-size: var(--font-xs) !important;
+  color: var(--text-light) !important;
+  margin-top: var(--space-3) !important;
+  padding-top: var(--space-3) !important;
+  border-top: 1px solid var(--border-light) !important;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* Category badge */
+.search-filter-results .cat-links a,
+.search-filter-results .category-badge,
+.notes-grid .cat-links a,
+.archive-posts .cat-links a,
+.post-grid .cat-links a {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  background: var(--primary-lighter);
+  color: var(--primary-color) !important;
+  font-size: var(--font-xs) !important;
+  font-weight: 700;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: var(--space-2);
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.search-filter-results .cat-links a:hover,
+.notes-grid .cat-links a:hover,
+.archive-posts .cat-links a:hover,
+.post-grid .cat-links a:hover {
+  background: var(--primary-color);
+  color: white !important;
+}
+
+/* =====================================================
+   SINGLE POST/PAGE
+   ===================================================== */
+.single .entry-header,
+.page .entry-header {
+  margin: 0 0 var(--space-8) 0 !important;
+  padding: 0 0 var(--space-6) 0 !important;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.single .entry-title,
+.page .entry-title {
+  font-size: var(--font-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-4);
+}
+
+.single .entry-content,
+.page .entry-content {
+  font-size: var(--font-md);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.single .entry-content p,
+.page .entry-content p {
+  margin-bottom: var(--space-5);
+}
+
+.single .entry-content h2,
+.page .entry-content h2 {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+.single .entry-content h3,
+.page .entry-content h3 {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+.single .post-thumbnail,
+.page .post-thumbnail {
+  margin-bottom: var(--space-8);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.site-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+  color: #cbd5e1 !important;
+  padding: var(--space-12) 0 0 0 !important;
+  margin-top: var(--space-16) !important;
+}
+
+.site-footer .ast-container {
+  padding-bottom: var(--space-10) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer a {
+  color: #e5e7eb !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: var(--accent-color) !important;
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer .widget-title {
+  color: white !important;
+  font-weight: 700 !important;
+  margin-bottom: var(--space-5) !important;
+  font-size: var(--font-lg) !important;
+}
+
+.site-info {
+  text-align: center;
+  padding: var(--space-6) 0 !important;
+  margin: 0 !important;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: var(--font-sm);
+  color: #94a3b8 !important;
+}
+
+.site-info a[href*="wpastra"],
+.site-info a[href*="wordpress.org"] {
+  display: none !important;
+}
+
+.site-info::after {
+  content: ' • Made with ❤️ for Students';
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+/* =====================================================
+   UTILITIES
+   ===================================================== */
+.btn-primary {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  background: var(--primary-color);
+  color: white !important;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Scroll to top button */
+#ast-scroll-top {
+  background: var(--primary-color) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  transition: all 0.2s ease !important;
+}
+
+#ast-scroll-top:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-xl) !important;
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid var(--primary-color) !important;
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+   ===================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --container-padding: 40px;
+    --font-4xl: 28px;
+    --font-3xl: 24px;
+  }
+  
+  .search-filter-results,
+  .notes-grid,
+  .archive-posts,
+  .post-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-padding:20px;
+    --font-4xl: 24px;
+    --font-3xl: 22px;
+    --font-2xl: 20px;
+  }
+  
+  .searchandfilter {
+    padding: var(--space-5) !important;
+    max-width:900px;
+  }
+  
+  .searchandfilter ul {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-3) !important;
+  }
+  
+  .searchandfilter input[type="submit"] {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 16px;
+    --font-4xl: 22px;
+  }
+  
+  .search-filter-results,
+  .notes-grid,
+  .archive-posts,
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-filter-results article,
+.notes-grid article {
+  animation: fadeInUp 0.4s ease backwards;
+}
+
+.search-filter-results article:nth-child(1) { animation-delay: 0.05s; }
+.search-filter-results article:nth-child(2) { animation-delay: 0.1s; }
+.search-filter-results article:nth-child(3) { animation-delay: 0.15s; }
+.search-filter-results article:nth-child(4) { animation-delay: 0.2s; }
+.search-filter-results article:nth-child(5) { animation-delay: 0.25s; }
+.search-filter-results article:nth-child(6) { animation-delay: 0.3s; }
+
+.site-content > .ast-container {
+  padding-top: var(--space-10) !important;
+}
+
+/* ================================
+REMOVE GHOST SPACE FROM PAGE TITLE
+================================ */
+
+.site-content > .ast-container,
+.ast-separate-container .site-main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Remove entry header completely */
+.entry-header,
+.ast-page-header,
+.ast-archive-header {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-section{
+  margin-top:0 !important;
+}
+
+/* Elementor first section flush to header */
+.elementor-location-single > .elementor-section:first-child,
+.elementor-location-archive > .elementor-section:first-child,
+.site-main > article > .elementor:first-child .elementor-section:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ================================
+BALANCED HEADING SYSTEM
+================================ */
+
+:root{
+  --font-h1: 30px;
+  --font-h2: 24px;
+  --font-h3: 20px;
+  --font-h4: 18px;
+}
+
+/* Elementor headings */
+.elementor-heading-title{
+  letter-spacing:-0.3px;
+}
+
+/* H1 — Page Title */
+.elementor-widget-heading h1{
+  font-size: var(--font-h1) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+}
+
+/* H2 */
+.elementor-widget-heading h2{
+  font-size: var(--font-h2) !important;
+  font-weight: 650 !important;
+}
+
+/* H3 */
+.elementor-widget-heading h3{
+  font-size: var(--font-h3) !important;
+  font-weight: 600 !important;
+}
+
+/* Content headings */
+.entry-content h2{
+  font-size: var(--font-h2);
+}
+
+.entry-content h3{
+  font-size: var(--font-h3);
+}
+
+.elementor-heading-title::after
+
+.elementor-heading-title::after{
+  display:none !important;
+}
+
+/* ================================
+PREMIUM BREADCRUMB
+================================ */
+
+.ast-breadcrumbs-wrapper,
+.rank-math-breadcrumb,
+.yoast-breadcrumb{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 6px 0 !important;
+  margin-bottom: 18px !important;
+
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Links */
+.ast-breadcrumbs-wrapper a{
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.ast-breadcrumbs-wrapper a:hover{
+  color: var(--primary-color);
+}
+
+/* Separator */
+.ast-breadcrumbs-separator{
+  opacity:.4;
+}
+
+/* Current page */
+.ast-breadcrumbs-wrapper .breadcrumb_last{
+  color: var(--text-primary);
+  font-weight:600;
+}
+
+--container-padding: 60px;
+
+
+
+
+
+/* =====================================================
+   ARCHIVE PAGE TITLE - FIX FOR HISTORY & TAXONOMY PAGES
+   ===================================================== */
+
+/* Override the display:none for archive titles */
+.ast-archive-header {
+  display: block !important;
+  margin-bottom: var(--space-10) !important;
+}
+
+.ast-archive-description {
+  margin-bottom: var(--space-10) !important;
+}
+
+/* Show and style the archive title */
+h1.page-title.ast-archive-title {
+  display: inline-block !important;
+  font-size: var(--font-h1) !important;
+  font-weight: 800 !important;
+  color: var(--text-primary) !important;
+  line-height: 1.25 !important;
+  margin: 0 0 var(--space-5) 0 !important;
+  padding-bottom: var(--space-4) !important;
+  position: relative;
+  letter-spacing: -0.3px;
+}
+
+/* Add the gradient underline */
+h1.page-title.ast-archive-title::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--radius-xs);
+}
+
+/* Hide duplicate description paragraph */
+.ast-archive-description > p {
+  display: none !important;
+}
+
+/* =====================================================
+   IMPROVED BREADCRUMB STYLING
+   ===================================================== */
+
+/* Breadcrumb container */
+.ast-breadcrumbs-wrapper {
+  background: white !important;
+/*   border: 1px solid var(--border-light) !important; */
+/*   box-shadow: var(--shadow-xs) !important; */
+  padding: var(--space-2) var(--space-4) !important;
+/*   margin-bottom: var(--space-6) !important; */
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-sm);
+}
+
+/* Breadcrumb inner wrapper */
+.ast-breadcrumbs-inner {
+  display: flex;
+  align-items: center;
+}
+
+/* Breadcrumb navigation */
+.breadcrumb-trail.breadcrumbs {
+  margin: 0;
+  padding: 0;
+}
+
+.ast-breadcrumbs ul.trail-items {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.ast-breadcrumbs ul.trail-items li {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Breadcrumb links */
+.ast-breadcrumbs-wrapper a {
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+
+.ast-breadcrumbs-wrapper a:hover {
+  color: var(--primary-color) !important;
+}
+
+/* Separators between breadcrumb items */
+.trail-items li:not(:last-child)::after {
+  content: '›';
+  margin: 0 var(--space-2);
+  color: var(--text-light);
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+/* Current/last breadcrumb item */
+.trail-items .trail-end span span,
+.breadcrumb_last {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+/* Remove separator after last item */
+.trail-items .trail-end::after {
+  display: none;
+}
+
+/* Home icon option (if you want to add one) */
+.trail-begin a::before {
+  content: '🏠';
+  margin-right: var(--space-1);
+  font-size: 12px;
+}
+
+/* Responsive breadcrumb */
+@media (max-width: 768px) {
+  .ast-breadcrumbs-wrapper {
+    padding: var(--space-2) var(--space-3) !important;
+    font-size: var(--font-xs);
+  }
+  
+  .trail-items li:not(:last-child)::after {
+    margin: 0 var(--space-1);
+  }
+}
+
+@media (max-width: 480px) {
+  .ast-breadcrumbs-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+/* =====================================================
+   UNIFIED CARD DESIGN
+   Works for both Astra Blog Layout & WP Show Posts
+   ===================================================== */
+
+/* =====================================================
+   ASTRA DEFAULT BLOG LAYOUT (blog-layout-4)
+   ===================================================== */
+
+/* Container grid */
+.ast-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  .ast-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Individual Astra card */
+.ast-grid-common-col.ast-article-post {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 !important;
+}
+
+/* Top accent bar */
+.ast-grid-common-col.ast-article-post::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.ast-grid-common-col.ast-article-post:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover effect */
+.ast-grid-common-col.ast-article-post:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+/* Inner wrapper */
+.blog-layout-4.ast-article-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-layout-4 .post-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Featured image */
+.ast-blog-featured-section.post-thumb {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  height: 200px;
+  margin: 0 !important;
+}
+
+.ast-blog-featured-section.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.ast-grid-common-col.ast-article-post:hover .ast-blog-featured-section.post-thumb img {
+  transform: scale(1.08);
+}
+
+/* Remove the empty grey box for posts without images */
+.ast-no-thumb .ast-blog-featured-section {
+  display: none !important;
+}
+
+/* Title */
+.blog-layout-4 h2.entry-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: var(--space-5) var(--space-5) var(--space-2) var(--space-5) !important;
+  color: var(--text-primary) !important;
+  order: 2;
+}
+
+.blog-layout-4 h2.entry-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ast-grid-common-col.ast-article-post:hover h2.entry-title a {
+  color: var(--primary-color) !important;
+}
+
+/* Meta info (author, date) */
+.blog-layout-4 .entry-header.ast-blog-meta-container {
+  font-size: var(--font-xs) !important;
+  margin: 0 var(--space-5) !important;
+  padding-top: var(--space-3) !important;
+  border-top: 1px solid var(--border-light);
+  order: 4;
+  margin-top: auto !important;
+}
+
+.blog-layout-4 .entry-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  color: var(--text-light) !important;
+}
+
+.blog-layout-4 .entry-meta a {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.blog-layout-4 .posted-on::before {
+  content: '📅';
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+/* HIDE EXCERPT - Remove YouTube links */
+.blog-layout-4 .ast-excerpt-container {
+  display: none !important;
+}
+
+/* Hide empty entry-content */
+.blog-layout-4 .entry-content.clear {
+  display: none !important;
+}
+
+/* =====================================================
+   WP SHOW POSTS PLUGIN
+   ===================================================== */
+
+/* Remove default negative margins */
+.wp-show-posts-columns {
+  margin-left: 0 !important;
+}
+
+.wp-show-posts-columns .wp-show-posts-inner {
+  margin: 0 !important;
+}
+
+/* Container grid */
+.wp-show-posts {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 28px !important;
+  margin: 0 0 var(--space-12) 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 1200px) {
+  .wp-show-posts {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Individual card */
+.wp-show-posts-single {
+  background: white;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top accent bar */
+.wp-show-posts-single::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.wp-show-posts-single:hover::before {
+  transform: scaleX(1);
+}
+
+/* Hover effect */
+.wp-show-posts-single:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+/* Inner wrapper */
+.wp-show-posts-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Featured image */
+.wp-show-posts-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  height: 200px;
+  margin: 0 !important;
+}
+
+.wp-show-posts-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wp-show-posts-single:hover .wp-show-posts-image img {
+  transform: scale(1.08);
+}
+
+/* Header section */
+.wp-show-posts-entry-header {
+  padding: var(--space-5);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.wp-show-posts-entry-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  margin: 0 0 var(--space-3) 0 !important;
+  color: var(--text-primary) !important;
+}
+
+.wp-show-posts-entry-title a {
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.wp-show-posts-single:hover .wp-show-posts-entry-title a {
+  color: var(--primary-color) !important;
+}
+
+/* Meta info */
+.wp-show-posts-entry-meta {
+  font-size: var(--font-xs) !important;
+  color: var(--text-light) !important;
+  margin-top: auto !important;
+  padding-top: var(--space-3) !important;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.wp-show-posts-entry-meta a {
+  color: var(--text-muted) !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.wp-show-posts-posted-on::before {
+  content: '📅';
+  margin-right: 4px;
+  font-size: 12px;
+}
+
+/* Hide time element */
+.wp-show-posts-updated {
+  display: none !important;
+}
+
+/* HIDE SUMMARY/EXCERPT - Remove YouTube links */
+.wp-show-posts-entry-summary {
+  display: none !important;
+}
+
+/* HIDE READ MORE BUTTON */
+.wpsp-read-more {
+  display: none !important;
+}
+
+/* Clear floats */
+.wpsp-clear {
+  display: none;
+}
+
+/* Remove default column classes */
+.wpsp-col-6 {
+  width: 100% !important;
+  float: none !important;
+  margin: 0 !important;
+}
+
+/* =====================================================
+   RESPONSIVE LAYOUT - BOTH LAYOUTS
+   ===================================================== */
+
+/* Medium Desktop - 3 cards */
+@media (min-width: 900px) and (max-width: 1199px) {
+  .ast-row,
+  .wp-show-posts {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 24px !important;
+  }
+  
+  .ast-blog-featured-section.post-thumb,
+  .wp-show-posts-image {
+    height: 180px;
+  }
+}
+
+/* Tablet - 2 cards */
+@media (min-width: 600px) and (max-width: 899px) {
+  .ast-row,
+  .wp-show-posts {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+  }
+  
+  .ast-blog-featured-section.post-thumb,
+  .wp-show-posts-image {
+    height: 180px;
+  }
+  
+  .blog-layout-4 h2.entry-title,
+  .wp-show-posts-entry-title {
+    font-size: 15px !important;
+  }
+}
+
+/* Mobile - 1 card */
+@media (max-width: 599px) {
+  .ast-row,
+  .wp-show-posts {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  
+  .ast-blog-featured-section.post-thumb,
+  .wp-show-posts-image {
+    height: 200px;
+  }
+  
+  .blog-layout-4 h2.entry-title {
+    margin: var(--space-4) var(--space-4) var(--space-2) var(--space-4) !important;
+  }
+  
+  .blog-layout-4 .entry-header.ast-blog-meta-container {
+    margin: 0 var(--space-4) !important;
+  }
+  
+  .wp-show-posts-entry-header {
+    padding: var(--space-4);
+  }
+  
+  .blog-layout-4 h2.entry-title,
+  .wp-show-posts-entry-title {
+    font-size: 15px !important;
+  }
+}
+
+/* =====================================================
+   SMOOTH ANIMATIONS
+   ===================================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ast-grid-common-col.ast-article-post,
+.wp-show-posts-single {
+  animation: fadeInUp 0.5s ease backwards;
+}
+
+.ast-grid-common-col.ast-article-post:nth-child(1),
+.wp-show-posts-single:nth-child(1) { animation-delay: 0.05s; }
+.ast-grid-common-col.ast-article-post:nth-child(2),
+.wp-show-posts-single:nth-child(2) { animation-delay: 0.1s; }
+.ast-grid-common-col.ast-article-post:nth-child(3),
+.wp-show-posts-single:nth-child(3) { animation-delay: 0.15s; }
+.ast-grid-common-col.ast-article-post:nth-child(4),
+.wp-show-posts-single:nth-child(4) { animation-delay: 0.2s; }
+.ast-grid-common-col.ast-article-post:nth-child(5),
+.wp-show-posts-single:nth-child(5) { animation-delay: 0.25s; }
+.ast-grid-common-col.ast-article-post:nth-child(6),
+.wp-show-posts-single:nth-child(6) { animation-delay: 0.3s; }
+
+/* =====================================
+   Search & Filter – Remove "All" options
+   (based on real HTML structure)
+   ===================================== */
+
+/* Hide "All Subject" */
+.searchandfilter select#ofsubject option[value="0"] {
+  display: none !important;
+}
+
+/* Hide "All Class" */
+.searchandfilter select#ofclass option[value="0"] {
+  display: none !important;
+}
+
+/* =====================================
+   Search & Filter – CSS-only submit control
+   ===================================== */
+
+/* Default: disable submit */
+.searchandfilter input[type="submit"] {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+/* Enable submit IF subject is changed */
+.searchandfilter:has(select#ofsubject option:not([value="0"]):checked)
+input[type="submit"] {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* Enable submit IF class is changed */
+.searchandfilter:has(select#ofclass option:not([value="0"]):checked)
+input[type="submit"] {
+  pointer-events: auto;
+  opacity: 1;
+  cursor: pointer;
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+/* =====================================================
+   DEFAULT IMAGE FOR WP SHOW POSTS (WHEN IMAGE IS MISSING)
+   ===================================================== */
+
+.wp-show-posts-inner:not(:has(.wp-show-posts-image))::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 174px; /* same height as real images */
+
+  background-image:
+    linear-gradient(135deg, #dbeafe 0%, #eff6ff 100%),
+    url("https://previews.123rf.com/images/artinspiring/artinspiring1803/artinspiring180300324/97357190-cartoon-woman-studying-illustration.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 6px; /* optional, match theme */
+  margin-bottom: 12px;
+}
+
+/* Hide default WP Show Posts when filters are applied */
+.searchandfilter-results:not(:empty) + .wp-show-posts {
+  display: none;
+}
+
+/* ==========================================
+   PREMIUM HOME ICON CARDS – COLOR & ANIMATION
+   ========================================== */
+
+/* Base card */
+.elementor-widget-icon-box {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+  border-radius: 16px;
+  padding: 30px 24px;
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+  box-shadow:
+    0 10px 25px rgba(15, 23, 42, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft premium border glow (hidden by default) */
+.elementor-widget-icon-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    120deg,
+    rgba(37, 99, 235, 0.25),
+    rgba(245, 158, 11, 0.25)
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+/* Hover elevation */
+.elementor-widget-icon-box:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 45px rgba(15, 23, 42, 0.15);
+}
+
+/* Activate glow on hover */
+.elementor-widget-icon-box:hover::before {
+  opacity: 1;
+}
+
+/* Icon wrapper */
+.elementor-icon-box-icon {
+  margin-bottom: 18px;
+}
+
+/* Icon base style */
+.elementor-icon-box-icon svg {
+  width: 52px;
+  height: 52px;
+  fill: #1e40af; /* deep academic blue */
+  transition:
+    transform 0.45s ease,
+    fill 0.35s ease;
+}
+
+/* Icon animation (subtle premium motion) */
+.elementor-widget-icon-box:hover
+.elementor-icon-box-icon svg {
+  transform: scale(1.12) rotate(-2deg);
+  fill: #f59e0b; /* soft amber */
+}
+
+/* Title */
+.elementor-icon-box-title {
+  font-size: 21px;
+  font-weight: 600;
+  color: #0f172a; /* slate-900 */
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+/* Description */
+.elementor-icon-box-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #475569; /* slate-600 */
+}
+
+/* Ensure whole card feels clickable */
+.elementor-widget-icon-box,
+.elementor-widget-icon-box * {
+  cursor: pointer;
+}
+
+/* Mobile refinement */
+@media (max-width: 767px) {
+  .elementor-widget-icon-box {
+    padding: 24px 18px;
+  }
+
+  .elementor-icon-box-icon svg {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+
